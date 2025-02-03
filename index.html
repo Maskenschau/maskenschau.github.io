@@ -113,12 +113,93 @@
                 font-size: 2rem;
             }
         }
+
+        /* Neue Styles für interaktive Elemente */
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid #fe2c55;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .example-box:hover {
+            transform: translateX(5px);
+        }
+
+        .example-result {
+            display: none;
+            background: #fff;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .bot-link {
+            display: inline-block;
+            background: #fe2c55;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .bot-link:hover {
+            background: #e62548;
+        }
+
+        .copy-button {
+            background: #f0f2f5;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+            float: right;
+        }
+
+        .copy-button:hover {
+            background: #e4e6e9;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>TikTok Info Bot</h1>
         <div class="subtitle">Dein Assistent für TikTok-Profilinformationen</div>
+        <a href="https://t.me/dein_bot_username" class="bot-link">🤖 Bot auf Telegram öffnen</a>
     </header>
 
     <div class="container">
@@ -139,37 +220,73 @@
         </div>
 
         <div class="section">
-            <h2>📝 Verfügbare Befehle</h2>
+            <h2>📝 Verfügbare Befehle mit Beispielen</h2>
             
             <div class="command">
-                <div class="command-name">/start oder /help</div>
-                <div class="command-description">Zeigt die Willkommensnachricht und Grundlegende Hilfe an.</div>
+                <div class="command-name">
+                    /start oder /help
+                    <button class="copy-button" onclick="copyToClipboard('/start')">Kopieren</button>
+                </div>
+                <div class="command-description">Zeigt die Willkommensnachricht und grundlegende Hilfe an.</div>
+                <div class="example-box" onclick="toggleExample('start-example')">
+                    👉 Klicke hier für ein Beispiel
+                </div>
+                <div class="example-result" id="start-example">
+                    <p>🤖 Willkommen beim TikTok Info Bot!</p>
+                    <p>Verfügbare Befehle:</p>
+                    <ul>
+                        <li>/tiktok @username - Profilinfo abrufen</li>
+                        <li>/history [user_id] - Namensänderungen anzeigen</li>
+                        <li>/help - Diese Hilfe anzeigen</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="command">
-                <div class="command-name">/tiktok @username</div>
-                <div class="command-description">Ruft Informationen über ein TikTok-Profil ab. Beispiel: /tiktok @tiktok</div>
+                <div class="command-name">
+                    /tiktok @username
+                    <button class="copy-button" onclick="copyToClipboard('/tiktok @tiktok')">Kopieren</button>
+                </div>
+                <div class="command-description">Ruft Informationen über ein TikTok-Profil ab.</div>
+                <div class="example-box" onclick="toggleExample('tiktok-example')">
+                    👉 Beispielausgabe für /tiktok @tiktok
+                </div>
+                <div class="example-result" id="tiktok-example">
+                    <p>📱 Profilinformationen für @tiktok:</p>
+                    <p>👤 Name: TikTok</p>
+                    <p>👥 Follower: 71.4M</p>
+                    <p>❤️ Likes: 518.9M</p>
+                    <p>📝 Bio: Make your day</p>
+                    <p>🔴 Live Status: Offline</p>
+                </div>
             </div>
 
             <div class="command">
-                <div class="command-name">/tiktok 123456789 --by_id</div>
-                <div class="command-description">Ruft Informationen über ein TikTok-Profil mittels User-ID ab.</div>
-            </div>
-
-            <div class="command">
-                <div class="command-name">/history [user_id]</div>
-                <div class="command-description">Zeigt die Verlaufshistorie der Namensänderungen eines Profils an.</div>
-            </div>
-
-            <div class="command">
-                <div class="command-name">/nickhistory [user_id]</div>
-                <div class="command-description">Zeigt die Verlaufshistorie der Nickname-Änderungen eines Profils an.</div>
+                <div class="command-name">
+                    /history [user_id]
+                    <button class="copy-button" onclick="copyToClipboard('/history 123456789')">Kopieren</button>
+                </div>
+                <div class="command-description">Zeigt die Historie der Namensänderungen.</div>
+                <div class="example-box" onclick="toggleExample('history-example')">
+                    👉 Beispielausgabe für /history
+                </div>
+                <div class="example-result" id="history-example">
+                    <p>📜 Namensänderungen für User ID 123456789:</p>
+                    <p>2024-03-15: TikTokUser → TikTokStar</p>
+                    <p>2024-02-01: TikTokNewbie → TikTokUser</p>
+                </div>
             </div>
         </div>
 
         <div class="section">
+            <h2>🚀 Schnellstart</h2>
+            <p>1. Öffne den Bot auf Telegram: <a href="https://t.me/dein_bot_username" class="bot-link">@dein_bot_username</a></p>
+            <p>2. Sende /start um zu beginnen</p>
+            <p>3. Nutze /tiktok @username um Profilinfos abzurufen</p>
+        </div>
+
+        <div class="section">
             <h2>📊 Limitierungen</h2>
-            <p>Um einen reibungslosen Betrieb zu gewährleisten, gibt es einige Einschränkungen:</p>
             <ul class="feature-list">
                 <li>Maximal 5 Anfragen pro Benutzer pro Tag</li>
                 <li>Nur öffentlich zugängliche Informationen werden angezeigt</li>
@@ -188,5 +305,25 @@
         <p>Copyright © 2025 @Furby87 + @kurtmidas12</p>
         <p>Dieser Bot ist ein inoffizielles Tool und steht in keiner Verbindung zu TikTok.</p>
     </footer>
+
+    <script>
+        function toggleExample(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === 'none' || !element.style.display) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Optional: Zeige Feedback an
+                alert('Befehl kopiert!');
+            }).catch(err => {
+                console.error('Fehler beim Kopieren:', err);
+            });
+        }
+    </script>
 </body>
 </html> 
