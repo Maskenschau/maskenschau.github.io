@@ -45,6 +45,12 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .command {
@@ -53,15 +59,25 @@
             padding: 15px;
             margin: 10px 0;
             border-radius: 0 5px 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .command:hover {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(254, 44, 85, 0.15);
         }
 
         .command-name {
             font-weight: bold;
             color: #fe2c55;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .command-description {
             margin-top: 5px;
+            color: #666;
         }
 
         .feature-list {
@@ -82,39 +98,6 @@
             left: 0;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #65676b;
-            font-size: 0.9rem;
-        }
-
-        .contact-button {
-            display: inline-block;
-            background: #fe2c55;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .contact-button:hover {
-            background: #e62548;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Neue Styles für interaktive Elemente */
         .example-box {
             background: #f8f9fa;
             border-left: 4px solid #fe2c55;
@@ -122,11 +105,21 @@
             margin: 15px 0;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
         }
 
         .example-box:hover {
             transform: translateX(5px);
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(254, 44, 85, 0.15);
+        }
+
+        .example-box::after {
+            content: "👆";
+            margin-left: auto;
+            font-size: 1.2em;
         }
 
         .example-result {
@@ -136,6 +129,18 @@
             margin-top: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .bot-link {
@@ -146,52 +151,64 @@
             text-decoration: none;
             border-radius: 5px;
             margin: 10px 0;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
         }
 
         .bot-link:hover {
             background: #e62548;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
         }
 
         .copy-button {
             background: #f0f2f5;
             border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
+            padding: 8px 15px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 0.9em;
-            float: right;
+            transition: all 0.3s ease;
+            color: #fe2c55;
         }
 
         .copy-button:hover {
-            background: #e4e6e9;
+            background: #fe2c55;
+            color: white;
         }
 
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: #555;
-            color: #fff;
+        footer {
             text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            padding: 20px;
+            color: #65676b;
+            font-size: 0.9rem;
+            margin-top: 40px;
         }
 
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
+        .contact-button {
+            display: inline-block;
+            background: #fe2c55;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #e62548;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -229,7 +246,7 @@
                 </div>
                 <div class="command-description">Zeigt die Willkommensnachricht und grundlegende Hilfe an.</div>
                 <div class="example-box" onclick="toggleExample('start-example')">
-                    👉 Klicke hier für ein Beispiel
+                    Klicke hier für ein Beispiel
                 </div>
                 <div class="example-result" id="start-example">
                     <p>🤖 Willkommen beim TikTok Info Bot!</p>
@@ -237,6 +254,7 @@
                     <ul>
                         <li>/tiktok @username - Profilinfo abrufen</li>
                         <li>/history [user_id] - Namensänderungen anzeigen</li>
+                        <li>/nickhistory [user_id] - Nickname-Historie anzeigen</li>
                         <li>/help - Diese Hilfe anzeigen</li>
                     </ul>
                 </div>
@@ -249,7 +267,7 @@
                 </div>
                 <div class="command-description">Ruft Informationen über ein TikTok-Profil ab.</div>
                 <div class="example-box" onclick="toggleExample('tiktok-example')">
-                    👉 Beispielausgabe für /tiktok @username
+                    Beispielausgabe für /tiktok @username
                 </div>
                 <div class="example-result" id="tiktok-example">
                     <p>🤖 TikTok Benutzerinfo</p>
@@ -265,7 +283,7 @@
                     <p>↳ Folgt: 3568</p>
                     <p>↳ Likes: 2100000</p>
                     <p>↳ Videos: 545</p>
-                    <p>�� Freunde: 3026</p>
+                    <p>👥 Freunde: 3026</p>
                     <p>📅 Account erstellt: 30.10.2019, 09:07:38</p>
                     <p>✏️ Letzte Namensänderung: 10.01.2025, 22:07:03</p>
                     <p>🔒 Privater Account: Nein ❌</p>
@@ -282,12 +300,28 @@
                 </div>
                 <div class="command-description">Zeigt die Historie der Namensänderungen.</div>
                 <div class="example-box" onclick="toggleExample('history-example')">
-                    👉 Beispielausgabe für /history
+                    Beispielausgabe für /history
                 </div>
                 <div class="example-result" id="history-example">
                     <p>📜 Namensänderungen für User ID 123456789:</p>
                     <p>2024-03-15: TikTokUser → TikTokStar</p>
                     <p>2024-02-01: TikTokNewbie → TikTokUser</p>
+                </div>
+            </div>
+
+            <div class="command">
+                <div class="command-name">
+                    /nickhistory [user_id]
+                    <button class="copy-button" onclick="copyToClipboard('/nickhistory 123456789')">Kopieren</button>
+                </div>
+                <div class="command-description">Zeigt die Historie der Nickname-Änderungen.</div>
+                <div class="example-box" onclick="toggleExample('nickhistory-example')">
+                    Beispielausgabe für /nickhistory
+                </div>
+                <div class="example-result" id="nickhistory-example">
+                    <p>📜 Nickname-Historie für User ID 123456789:</p>
+                    <p>2024-03-15: @TikTokUser → @TikTokStar</p>
+                    <p>2024-02-01: @TikTokNewbie → @TikTokUser</p>
                 </div>
             </div>
         </div>
