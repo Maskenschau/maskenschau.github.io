@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Info Bot - Dokumentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fe2c55;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .command {
+            background: #f8f9fa;
+            border-left: 4px solid #fe2c55;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .command-name {
+            font-weight: bold;
+            color: #fe2c55;
+        }
+
+        .command-description {
+            margin-top: 5px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #fe2c55;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #65676b;
+            font-size: 0.9rem;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #fe2c55;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #e62548;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TikTok Info Bot</h1>
+        <div class="subtitle">Dein Assistent für TikTok-Profilinformationen</div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>🤖 Über den Bot</h2>
+            <p>Der TikTok Info Bot ist ein leistungsstarker Telegram-Bot, der dir detaillierte Informationen über TikTok-Profile liefert. Er wurde entwickelt, um schnell und einfach Zugang zu öffentlichen TikTok-Profildaten zu erhalten.</p>
+        </div>
+
+        <div class="section">
+            <h2>✨ Hauptfunktionen</h2>
+            <ul class="feature-list">
+                <li>Abrufen von detaillierten Profilinformationen</li>
+                <li>Überprüfung des Live-Status</li>
+                <li>Anzeige von Follower- und Like-Statistiken</li>
+                <li>Verfolgung von Namensänderungen</li>
+                <li>Einsicht in Profilbilder und Bio-Texte</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 Verfügbare Befehle</h2>
+            
+            <div class="command">
+                <div class="command-name">/start oder /help</div>
+                <div class="command-description">Zeigt die Willkommensnachricht und Grundlegende Hilfe an.</div>
+            </div>
+
+            <div class="command">
+                <div class="command-name">/tiktok @username</div>
+                <div class="command-description">Ruft Informationen über ein TikTok-Profil ab. Beispiel: /tiktok @tiktok</div>
+            </div>
+
+            <div class="command">
+                <div class="command-name">/tiktok 123456789 --by_id</div>
+                <div class="command-description">Ruft Informationen über ein TikTok-Profil mittels User-ID ab.</div>
+            </div>
+
+            <div class="command">
+                <div class="command-name">/history [user_id]</div>
+                <div class="command-description">Zeigt die Verlaufshistorie der Namensänderungen eines Profils an.</div>
+            </div>
+
+            <div class="command">
+                <div class="command-name">/nickhistory [user_id]</div>
+                <div class="command-description">Zeigt die Verlaufshistorie der Nickname-Änderungen eines Profils an.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Limitierungen</h2>
+            <p>Um einen reibungslosen Betrieb zu gewährleisten, gibt es einige Einschränkungen:</p>
+            <ul class="feature-list">
+                <li>Maximal 5 Anfragen pro Benutzer pro Tag</li>
+                <li>Nur öffentlich zugängliche Informationen werden angezeigt</li>
+                <li>Einige Funktionen sind nur in autorisierten Gruppen verfügbar</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📞 Support</h2>
+            <p>Bei Fragen, Problemen oder Anregungen kannst du dich jederzeit an uns wenden:</p>
+            <a href="https://t.me/furby87" class="contact-button">@furby87 kontaktieren</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 @Furby87 + @kurtmidas12</p>
+        <p>Dieser Bot ist ein inoffizielles Tool und steht in keiner Verbindung zu TikTok.</p>
+    </footer>
+</body>
+</html> 
