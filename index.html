@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Info Bot - Dokumentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,6 +14,21 @@
             padding: 0;
             background-color: #f0f2f5;
             color: #1c1e21;
+            background: linear-gradient(-45deg, #fe2c55, #ff4d79, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .container {
@@ -40,7 +57,10 @@
         }
 
         .section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
@@ -60,11 +80,24 @@
             margin: 10px 0;
             border-radius: 0 5px 5px 0;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .command:hover {
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(254, 44, 85, 0.15);
+        .command::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(254, 44, 85, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .command:hover::before {
+            transform: translateX(100%);
         }
 
         .command-name {
@@ -153,12 +186,19 @@
             margin: 10px 0;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        .bot-link:hover {
-            background: #e62548;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(254, 44, 85, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(254, 44, 85, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(254, 44, 85, 0);
+            }
         }
 
         .copy-button {
@@ -234,6 +274,8 @@
             color: #1c1e21;
             transition: all 0.3s ease;
             border: 2px solid #fe2c55;
+            position: relative;
+            overflow: hidden;
         }
 
         .action-button:hover {
@@ -246,6 +288,8 @@
         .action-button .icon {
             font-size: 24px;
             margin-bottom: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         .action-button .text {
@@ -270,13 +314,21 @@
         }
 
         .progress {
-            background: #fe2c55;
+            background: linear-gradient(45deg, #fe2c55, #ff4d79);
+            background-size: 200% 200%;
             height: 100%;
             color: white;
             text-align: center;
             font-size: 12px;
             line-height: 20px;
             transition: width 0.3s ease;
+            animation: gradientMove 2s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .fab {
@@ -307,6 +359,86 @@
         .fab-icon {
             font-size: 24px;
         }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #fff,
+                         0 0 10px #fff,
+                         0 0 20px #ff1177,
+                         0 0 30px #ff1177,
+                         0 0 40px #ff1177;
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon {
+            from {
+                text-shadow: 0 0 5px #fff,
+                             0 0 10px #fff,
+                             0 0 20px #ff1177,
+                             0 0 30px #ff1177,
+                             0 0 40px #ff1177;
+            }
+            to {
+                text-shadow: 0 0 2.5px #fff,
+                             0 0 5px #fff,
+                             0 0 10px #ff1177,
+                             0 0 15px #ff1177,
+                             0 0 20px #ff1177;
+            }
+        }
+
+        .action-button::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .action-button:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+
+        .command:hover .icon {
+            transform: rotate(360deg);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .loading-animation {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #fe2c55;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -317,12 +449,12 @@
     </header>
 
     <div class="container">
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>🤖 Über den Bot</h2>
             <p>Der TikTok Info Bot ist ein leistungsstarker Telegram-Bot, der dir detaillierte Informationen über TikTok-Profile liefert. Er wurde von @Furby87 entwickelt, um schnell und einfach Zugang zu öffentlichen TikTok-Profildaten zu erhalten.</p>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>✨ Hauptfunktionen</h2>
             <ul class="feature-list">
                 <li>Abrufen von detaillierten Profilinformationen</li>
@@ -333,7 +465,7 @@
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>📝 Verfügbare Befehle mit Beispielen</h2>
             
             <div class="command">
@@ -423,14 +555,14 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>🚀 Schnellstart</h2>
             <p>1. Öffne den Bot auf Telegram: <a href="https://t.me/TikTokAbfrageBot" class="bot-link">@TikTokAbfrageBot</a></p>
             <p>2. Sende /start um zu beginnen</p>
             <p>3. Nutze /tiktok @username um Profilinfos abzurufen</p>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>📊 Limitierungen</h2>
             <ul class="feature-list">
                 <li>Maximal 5 Anfragen pro Benutzer pro Tag</li>
@@ -439,7 +571,7 @@
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>📊 Deine Limits</h2>
             <div class="limit-progress">
                 <div class="limit-label">Tägliche Anfragen</div>
@@ -449,7 +581,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="fade-up">
             <h2>📞 Support</h2>
             <p>Bei Fragen, Problemen oder Anregungen kannst du dich jederzeit an uns wenden:</p>
             <a href="https://t.me/furby87" class="contact-button">@furby87 kontaktieren</a>
@@ -485,24 +617,53 @@
     </div>
 
     <footer>
-        <p>Copyright © 2025 @Furby87</p>
+        <p>Copyright © 2025 @Furby87 + @kurtmidas12</p>
         <p>Dieser Bot ist ein inoffizielles Tool und steht in keiner Verbindung zu TikTok.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
         function toggleExample(id) {
             const element = document.getElementById(id);
             if (element.style.display === 'none' || !element.style.display) {
                 element.style.display = 'block';
+                element.classList.add('animate__animated', 'animate__fadeIn');
             } else {
-                element.style.display = 'none';
+                element.classList.add('animate__animated', 'animate__fadeOut');
+                setTimeout(() => {
+                    element.style.display = 'none';
+                    element.classList.remove('animate__animated', 'animate__fadeOut');
+                }, 500);
             }
         }
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                // Optional: Zeige Feedback an
-                alert('Befehl kopiert!');
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Kopiert! ✓';
+                button.style.background = '#4CAF50';
+                button.style.color = 'white';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                    button.style.color = '';
+                }, 2000);
             }).catch(err => {
                 console.error('Fehler beim Kopieren:', err);
             });
