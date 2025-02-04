@@ -210,6 +210,48 @@
                 font-size: 2rem;
             }
         }
+
+        .quick-actions {
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #1c1e21;
+            transition: all 0.3s ease;
+            border: 2px solid #fe2c55;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.2);
+            background: #fe2c55;
+            color: white;
+        }
+
+        .action-button .icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .action-button .text {
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -346,6 +388,28 @@
             <h2>📞 Support</h2>
             <p>Bei Fragen, Problemen oder Anregungen kannst du dich jederzeit an uns wenden:</p>
             <a href="https://t.me/furby87" class="contact-button">@furby87 kontaktieren</a>
+        </div>
+
+        <div class="section quick-actions">
+            <h2>⚡ Schnellzugriff</h2>
+            <div class="button-grid">
+                <a href="tg://resolve?domain=TikTokAbfrageBot&start=help" class="action-button">
+                    <span class="icon">❓</span>
+                    <span class="text">Hilfe anzeigen</span>
+                </a>
+                <a href="tg://resolve?domain=TikTokAbfrageBot&start=profile" class="action-button">
+                    <span class="icon">👤</span>
+                    <span class="text">Profil abfragen</span>
+                </a>
+                <a href="tg://resolve?domain=TikTokAbfrageBot&start=history" class="action-button">
+                    <span class="icon">📜</span>
+                    <span class="text">Historie prüfen</span>
+                </a>
+                <a href="https://t.me/furby87" class="action-button">
+                    <span class="icon">💬</span>
+                    <span class="text">Support</span>
+                </a>
+            </div>
         </div>
     </div>
 
