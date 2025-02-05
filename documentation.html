@@ -164,23 +164,27 @@
 
         .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             background: #fe2c55;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
             transition: all 0.3s ease;
+            z-index: 1000;
         }
 
         .back-to-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
+            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.4);
+            background: #e62548;
         }
 
         .back-button {
@@ -372,7 +376,7 @@
             once: true
         });
 
-        // Smooth scrolling
+        // Smooth scrolling für alle Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -382,7 +386,7 @@
             });
         });
 
-        // Back to top button
+        // Back to top button Funktionalität
         window.onscroll = function() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.querySelector('.back-to-top').style.display = "flex";
@@ -390,6 +394,15 @@
                 document.querySelector('.back-to-top').style.display = "none";
             }
         };
+
+        // Smooth scroll to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html> 
