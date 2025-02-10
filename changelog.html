@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Info Bot - Dokumentation</title>
+    <title>Changelog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -756,297 +756,184 @@
 </head>
 <body>
     <header>
-        <h1>TikTok User Info Bot</h1>
-        <div class="subtitle">Der leistungsstarke Telegram-Bot für TikTok-Profilanalysen</div>
-        <a href="https://t.me/TikTokAbfrageBot" class="bot-link">🤖 Bot auf Telegram öffnen</a>
+        <a href="index.html" class="back-button" style="position: absolute; left: 20px; top: 20px; color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+            <span style="font-size: 20px;">←</span> Zurück
+        </a>
+        <h1>TikTok Info Bot - Changelog</h1>
+        <div class="subtitle">Alle Änderungen und Updates im Überblick</div>
     </header>
 
     <div class="container">
         <div class="section" data-aos="fade-up">
-            <h2>🚀 Schnellstart</h2>
-            <div class="button-grid">
-                <a href="https://t.me/TikTokAbfrageBot" class="action-button">
-                    <span class="icon">🤖</span>
-                    <span class="text">Bot starten</span>
-                    <span class="tooltip-text">Starte jetzt mit dem Bot auf Telegram</span>
-                </a>
-                <a href="documentation.html" class="action-button">
-                    <span class="icon">📚</span>
-                    <span class="text">Dokumentation</span>
-                    <span class="tooltip-text">Lerne alle Funktionen kennen</span>
-                </a>
-                <a href="https://github.com/Furby87" class="action-button">
-                    <span class="icon">💻</span>
-                    <span class="text">GitHub</span>
-                    <span class="tooltip-text">Weiter Projekte von @Furby87</span>
-                </a>
-                <a href="https://t.me/furby87" class="action-button">
-                    <span class="icon">💬</span>
-                    <span class="text">Support</span>
-                    <span class="tooltip-text">Kontaktiere unseren Support auf Telegram</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="section" data-aos="fade-up">
-            <h2>📊 Bot-Statistiken</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">📱</div>
-                    <div class="stat-number">1.4.3</div>
-                    <div class="stat-label">Aktuelle Version</div>
-                    <a href="changelog.html" class="credit-link" style="margin-top: 10px;">Changelog ansehen</a>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⚡</div>
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Verfügbarkeit</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💎</div>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Kostenlos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-number" id="userCount">0+</div>
-                    <div class="stat-label">Aktive Nutzer</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔍</div>
-                    <div class="stat-number" id="queryCount">0+</div>
-                    <div class="stat-label">Profilabfragen</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⚡</div>
-                    <div class="stat-number">99.2%</div>
-                    <div class="stat-label">Uptime</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" data-aos="fade-up">
-            <h2>✨ Hauptfunktionen</h2>
-            <div class="feature-card">
-                <div class="feature-icon">👤</div>
-                <h3>Profilanalysen in Echtzeit</h3>
-                <p>Detaillierte Informationen über TikTok-Profile mit allen wichtigen Statistiken und Metadaten</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Flexible Suche</h3>
-                <p>Suche Profile sowohl über Username als auch über User-ID</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Live-Status</h3>
-                <p>Überprüfe in Echtzeit, ob ein Profil gerade live streamt</p>
-            </div>
-        </div>
-
-        <div class="section" data-aos="fade-up">
-            <h2>📝 Beispielausgabe</h2>
+            <h2>📚 Version 1.4.3</h2>
             <div class="command">
-                <div class="command-name">
-                    Beispiel einer Profilabfrage
-                    <button class="copy-button" onclick="copyToClipboard('/tiktok @username')">Befehl kopieren</button>
-                </div>
-                <div class="telegram-message">
-                    <div class="message-header">
-                        <img src="icon.png" alt="Bot Avatar" class="bot-avatar">
-                        <span class="bot-name">TikTokAbfrageBot</span>
-                    </div>
-                    <pre class="message-content">🤖 TikTok Benutzerinfo
-👤 Name: [Username]
-💎 Username: @username
-🆔 User ID: 123456789
-🎯 Sec UID: MS4wLjABAAAA...
-📍 RoomID: 7467190337325533974
-🌍 Region: DE
-🗣 Language: DE
-
-📊 Statistiken:
-↳ Follower: 28200
-↳ Folgt: 3568
-↳ Likes: 2100000
-↳ Videos: 545
-👥 Freunde: 3026
-
-📅 Account erstellt: 30.10.2019, 09:07:38
-✏️ Letzte Namensänderung: 10.01.2025, 22:07:03
-🔒 Privater Account: Nein ❌
-🔴 Live: Ja ✅
-
-🖼️ Profilbild: https://...
-🔗 Permalink: https://www.tiktok.com/@...</pre>
-                </div>
+                <div class="command-title">Version 1.4.3 (10.02.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Verbesserte SQLite-Datenbankintegration</li>
+                    <li>Optimierte Datenbankabfragen</li>
+                    <li>Erweiterte Fehlerbehandlung für Datenbankoperationen</li>
+                </ul>
+                <h3>Geändert</h3>
+                <ul>
+                    <li>Überarbeitete Datenbankstruktur für bessere Performance</li>
+                    <li>Aktualisierte Dokumentation</li>
+                    <li>Verbesserte Fehlerbehandlung</li>
+                </ul>
+                <h3>Behoben</h3>
+                <ul>
+                    <li>Problem mit der Datenbankinitialisierung</li>
+                    <li>Verbesserte Fehlerbehandlung bei Datenbankzugriffen</li>
+                    <li>Optimierte Datenbankverbindungen</li>
+                </ul>
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <h2>🤖 Bot-Befehle</h2>
-            <div class="command" onclick="toggleCommand('start')">
-                <div class="command-name">
-                    /start
-                    <button class="copy-button" onclick="copyToClipboard('/start'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="start-details">
-                    <p>Startet den Bot und zeigt die Willkommensnachricht.</p>
-                    <div class="usage-example">
-                        Einfach /start eingeben, um zu beginnen.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="command" onclick="toggleCommand('tiktok-username')">
-                <div class="command-name">
-                    /tiktok @username
-                    <button class="copy-button" onclick="copyToClipboard('/tiktok @username'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="tiktok-username-details">
-                    <p>Ruft Informationen über ein TikTok-Profil via Username ab.</p>
-                    <div class="parameter">
-                        <span class="parameter-name">@username:</span> Der TikTok-Benutzername (mit oder ohne @)
-                    </div>
-                    <div class="usage-example">
-                        Beispiel: /tiktok @beispieluser
-                    </div>
-                </div>
-            </div>
-            
-            <div class="command" onclick="toggleCommand('tiktok-id')">
-                <div class="command-name">
-                    /tiktok ID --by_id
-                    <button class="copy-button" onclick="copyToClipboard('/tiktok ID --by_id'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="tiktok-id-details">
-                    <p>Ruft Informationen über ein TikTok-Profil via User-ID ab.</p>
-                    <div class="parameter">
-                        <span class="parameter-name">ID:</span> Die numerische TikTok User-ID
-                    </div>
-                    <div class="usage-example">
-                        Beispiel: /tiktok 123456789 --by_id
-                    </div>
-                </div>
-            </div>
-
-            <div class="command" onclick="toggleCommand('history')">
-                <div class="command-name">
-                    /history ID
-                    <button class="copy-button" onclick="copyToClipboard('/history ID'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="history-details">
-                    <p>Zeigt die Verlaufshistorie des @usernameeines Profils anhand der User-ID an.</p>
-                    <div class="parameter">
-                        <span class="parameter-name">ID:</span> Die numerische TikTok User-ID
-                    </div>
-                    <div class="usage-example">
-                        Beispiel: /history 123456789
-                    </div>
-                </div>
-            </div>
-
-            <div class="command" onclick="toggleCommand('nickhistory')">
-                <div class="command-name">
-                    /nickhistory ID
-                    <button class="copy-button" onclick="copyToClipboard('/nickhistory ID'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="nickhistory-details">
-                    <p>Zeigt die Historie der Nickname Änderungen eines Profils anhand der User-ID an.</p>
-                    <div class="parameter">
-                        <span class="parameter-name">ID:</span> Die numerische TikTok User-ID
-                    </div>
-                    <div class="usage-example">
-                        Beispiel: /nickhistory 123456789
-                    </div>
-                </div>
-            </div>
-
-            <div class="command" onclick="toggleCommand('stats')">
-                <div class="command-name">
-                    /stats
-                    <button class="copy-button" onclick="copyToClipboard('/stats'); event.stopPropagation();">Kopieren</button>
-                </div>
-                <div class="command-details" id="stats-details">
-                    <p>Zeigt Statistiken über den Bot an, wie zum Beispiel:</p>
-                    <ul>
-                        <li>Anzahl der aktiven Nutzer</li>
-                        <li>Gesamtzahl der Profilabfragen</li>
-                        <li>Bot-Version und Uptime</li>
-                    </ul>
-                    <div class="usage-example">
-                        Einfach /stats eingeben, um die Statistiken zu sehen.
-                    </div>
-                </div>
+            <h2>📚 Version 1.4.2</h2>
+            <div class="command">
+                <div class="command-title">Version 1.4.2 (04.02.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Sicheres Beenden des Bots mit CTRL+C</li>
+                    <li>Konsolenicon-Unterstützung für kompilierte .exe</li>
+                    <li>Verbesserte Konsolenausgaben für Bot-Status</li>
+                    <li>Detailliertere Logging-Informationen</li>
+                </ul>
+                <h3>Geändert</h3>
+                <ul>
+                    <li>Optimierte Signal-Handler für sauberes Beenden</li>
+                    <li>Verbesserte Thread-Verwaltung</li>
+                    <li>Aktualisierte Dokumentation</li>
+                    <li>Erweiterte Kompilierungsoptionen</li>
+                </ul>
+                <h3>Behoben</h3>
+                <ul>
+                    <li>Problem mit hängenden Threads beim Beenden</li>
+                    <li>Verbesserte Fehlerbehandlung beim Herunterfahren</li>
+                    <li>Korrektes Beenden des Werbe-Threads</li>
+                </ul>
             </div>
         </div>
 
         <div class="section" data-aos="fade-up">
-            <h2>🔍 Funktionen im Detail</h2>
-            <div class="feature-list">
-                <div class="command">
-                    <div class="command-name">Profilanalyse</div>
-                    <div class="command-description">
-                        <ul>
-                            <li>Detaillierte Benutzerinformationen</li>
-                            <li>Follower- und Like-Statistiken</li>
-                            <li>Anzahl der Freunde</li>
-                            <li>Account-Erstellungsdatum</li>
-                            <li>Letzte Namensänderung Datum</li>
-                            <li>Privater Account</li>
-                            <li>Live-Status-Überprüfung</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="command">
-                    <div class="command-name">Verlaufsverfolgung</div>
-                    <div class="command-description">
-                        <ul>
-                            <li>Namensänderungen nachverfolgen</li>
-                            <li>Follower-Entwicklung</li>
-                            <li>Like-Entwicklung</li>
-                            <li>Video-Upload-Historie</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="command">
-                    <div class="command-name">Live-Status</div>
-                    <div class="command-description">
-                        <ul>
-                            <li>Echtzeit-Überprüfung des Live-Status</li>
-                            <li>Live-Room-ID(wenn verfügbar)</li>
-                            <li>Zuschauerzahlen(CommingSoon)</li>
-                            <li>Stream-Dauer(CommingSoon)</li>
-                        </ul>
-                    </div>
-                </div>
+            <h2>📚 Version 1.4.1</h2>
+            <div class="command">
+                <div class="command-title">Version 1.4.1 (03.02.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Optimierte Signal-Handler für sauberes Beenden</li>
+                    <li>Verbesserte Thread-Verwaltung</li>
+                    <li>Aktualisierte Dokumentation</li>
+                    <li>Erweiterte Kompilierungsoptionen</li>
+                </ul>
+                <h3>Geändert</h3>
+                <ul>
+                    <li>Verbesserte Fehlerbehandlung beim Herunterfahren</li>
+                    <li>Optimierte Prozessbeendigung</li>
+                    <li>Aktualisierte Abhängigkeiten</li>
+                </ul>
+                <h3>Behoben</h3>
+                <ul>
+                    <li>Problem mit nicht beendeten Threads</li>
+                </ul>
             </div>
         </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Version 1.3.0</h2>
+            <div class="command">
+                <div class="command-title">Version 1.3.0 (01.02.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Nickname change history tracking</li>
+                    <li>New command `/nickhistory` to view nickname changes</li>
+                    <li>Improved error handling for invalid inputs</li>
+                    <li>Clear error message when user not found</li>
+                </ul>
+                <h3>Geändert</h3>
+                <ul>
+                    <li>Updated database schema to support nickname history</li>
+                    <li>Improved user feedback for invalid inputs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Version 1.2.0</h2>
+            <div class="command">
+                <div class="command-title">Version 1.2.0 (30.01.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>SQLite database instead of CSV files</li>
+                    <li>New table `username_history` for tracking username changes</li>
+                    <li>`get_username_history` function to query username history</li>
+                    <li>Automatic logging of username changes with timestamp</li>
+                </ul>
+                <h3>Geändert</h3>
+                <ul>
+                    <li>Changed `DATABASE_FILE` from `.csv` to `.db</li>
+                    <li>Optimized `save_to_database` function for SQLite</li>
+                    <li>Adjusted database structure for better history tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Version 1.1.1</h2>
+            <div class="command">
+                <div class="command-title">Version 1.1.1 (28.01.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Support for links starting with `www.`</li>
+                    <li>Unicode escape decoding for links in signature</li>
+                    <li>Logging of user information and requested TikTok accounts in console</li>
+                    <li>Database updates only when changes occur</li>
+                </ul>
+                <h3>Behoben</h3>
+                <ul>
+                    <li>Error handling for missing numeric values (followers, likes, etc.)</li>
+                    <li>Proper handling of `sec_uid` in database</li>
+                    <li>Prevention of duplicate error messages in Telegram</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Version 1.1.0</h2>
+            <div class="command">
+                <div class="command-title">Version 1.1.0 (26.01.2024)</div>
+                <h3>Hinzugefügt</h3>
+                <ul>
+                    <li>Permalink generation based on sec_uid</li>
+                    <li>Changelog file</li>
+                    <li>Updated README.md and requirements.txt</li>
+                    <li>New commands for sec_uid, permalink, and live status checks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Version 1.0.0</h2>
+            <div class="command">
+                <div class="command-title">Version 1.0.0 (24.01.2024)</div>
+                <h3>Initial Release</h3>
+                <ul>
+                    <li>Initial version of the bot</li>
+                    <li>TikTok user information retrieval</li>
+                    <li>Data storage in CSV file</li>
+                    <li>Daily request limit</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <div class="fab">
-        <a href="https://t.me/TikTokAbfrageBot" class="fab-button">
-            <span class="fab-icon">🤖</span>
-        </a>
-        <a href="#" class="back-to-top" title="Nach oben">
-            <span>↑</span>
-        </a>
-    </div>
+    <a href="#" class="back-to-top">↑</a>
 
     <footer>
-        <div class="credits">
-            <p>
-                <span><a href="https://t.me/furby87" class="credit-link">@Furby87</a></span>
-                <span class="separator">+</span>
-                <span><a href="https://t.me/kurtmidas12" class="credit-link">@kurtmidas12</a></span>
-            </p>
-        </div>
-        <p class="disclaimer">
-            Dieser Bot ist ein inoffizielles Tool und steht in keiner Verbindung zu TikTok.
-        </p>
-        <p>Copyright © 2025</p>
+        <p>© 2025 TikTok Info Bot</p>
+        <p>Ein Projekt von <a href="https://t.me/furby87">@Furby87</a> und <a href="https://t.me/kurtmidas12">@kurtmidas12</a></p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1056,130 +943,7 @@
             once: true
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        function toggleExample(id) {
-            const element = document.getElementById(id);
-            if (element.style.display === 'none' || !element.style.display) {
-                element.style.display = 'block';
-                element.classList.add('animate__animated', 'animate__fadeIn');
-            } else {
-                element.classList.add('animate__animated', 'animate__fadeOut');
-                setTimeout(() => {
-                    element.style.display = 'none';
-                    element.classList.remove('animate__animated', 'animate__fadeOut');
-                }, 500);
-            }
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const button = event.target;
-                const originalText = button.textContent;
-                button.textContent = 'Kopiert! ✓';
-                button.style.background = '#4CAF50';
-                button.style.color = 'white';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '';
-                    button.style.color = '';
-                }, 2000);
-            }).catch(err => {
-                console.error('Fehler beim Kopieren:', err);
-            });
-        }
-
-        // Scroll Progress Bar
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollProgress").style.transform = "scaleX(" + scrolled / 100 + ")";
-        };
-
-        // Animierte Zahlen nur für User und Queries
-        function animateNumbers() {
-            const userTarget = 1000;
-            const queryTarget = 5000;
-            let userCurrent = 0;
-            let queryCurrent = 0;
-            
-            const userElement = document.getElementById('userCount');
-            const queryElement = document.getElementById('queryCount');
-            
-            const interval = setInterval(() => {
-                if (userCurrent < userTarget) {
-                    userCurrent += 5;
-                    if (userCurrent > userTarget) userCurrent = userTarget;
-                    userElement.textContent = userCurrent.toLocaleString('de-DE') + '+';
-                }
-                
-                if (queryCurrent < queryTarget) {
-                    queryCurrent += 10;
-                    if (queryCurrent > queryTarget) queryCurrent = queryTarget;
-                    queryElement.textContent = queryCurrent.toLocaleString('de-DE') + '+';
-                }
-                
-                if (userCurrent >= userTarget && queryCurrent >= queryTarget) {
-                    clearInterval(interval);
-                }
-            }, 20);
-        }
-
-        // Initialisiere Animationen beim Laden
-        document.addEventListener('DOMContentLoaded', animateNumbers);
-
-        // Statistik Details
-        function showStatDetails(stat) {
-            const details = {
-                users: "Über 1.000 aktive Nutzer vertrauen unserem Bot für ihre TikTok-Analysen.",
-                queries: "Mehr als 5.000 erfolgreiche Profilabfragen wurden bereits durchgeführt.",
-                uptime: "Unser Bot ist rund um die Uhr für Sie verfügbar mit einer Uptime von 99,2%."
-            };
-            
-            const modal = document.createElement('div');
-            modal.className = 'stat-modal';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <h3>${stat.charAt(0).toUpperCase() + stat.slice(1)}</h3>
-                    <p>${details[stat]}</p>
-                    <button onclick="this.parentElement.parentElement.remove()">Schließen</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-        }
-
-        function toggleCommand(commandId) {
-            const details = document.getElementById(`${commandId}-details`);
-            const command = details.parentElement;
-            
-            // Schließe alle anderen offenen Details
-            document.querySelectorAll('.command-details').forEach(detail => {
-                if (detail.id !== `${commandId}-details` && detail.style.display === 'block') {
-                    detail.style.display = 'none';
-                    detail.parentElement.classList.remove('active');
-                }
-            });
-
-            // Toggle aktuelles Detail
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                command.classList.remove('active');
-            } else {
-                details.style.display = 'block';
-                command.classList.add('active');
-            }
-        }
-
-        // Back to top button
+        // Back to top button Funktionalität
         window.onscroll = function() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.querySelector('.back-to-top').style.display = "flex";
