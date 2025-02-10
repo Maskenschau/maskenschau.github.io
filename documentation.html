@@ -198,6 +198,23 @@
             background: rgba(255, 255, 255, 0.3);
             transform: translateX(-5px);
         }
+
+        .version-info {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .version-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -359,6 +376,24 @@
                 <div class="command-title">Was tun bei Problemen?</div>
                 <p>Bei Problemen oder Fragen kannst du dich jederzeit an unseren Support @furby87 auf Telegram wenden.</p>
             </div>
+        </div>
+
+        <div class="section" data-aos="fade-up">
+            <h2>📚 Aktuelle Version</h2>
+            <div class="command">
+                <div class="command-title">Version 1.4.3 (14.02.2024)</div>
+                <p>Neuste Verbesserungen:</p>
+                <ul>
+                    <li>Verbesserte SQLite-Datenbankintegration</li>
+                    <li>Optimierte Datenbankabfragen</li>
+                    <li>Erweiterte Fehlerbehandlung für Datenbankoperationen</li>
+                    <li>Überarbeitete Datenbankstruktur für bessere Performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="version-info">
+            <strong>Aktuelle Version:</strong> 1.4.3
         </div>
     </div>
 
