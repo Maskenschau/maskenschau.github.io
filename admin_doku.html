@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Dokumentation für den TikTok-Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .command {
+            margin-bottom: 20px;
+        }
+        .command h3 {
+            margin-bottom: 5px;
+        }
+        .command p {
+            margin: 5px 0;
+        }
+        .example {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin-Dokumentation für den TikTok-Bot</h1>
+    <p>Diese Dokumentation enthält alle wichtigen Informationen und Admin-Befehle für den TikTok-Bot.</p>
+
+    <h2>Admin-Befehle</h2>
+
+    <div class="command">
+        <h3>1. <code>/allusernamehistory</code></h3>
+        <p><strong>Beschreibung:</strong> Zeigt alle Namensänderungen an, die in der Datenbank gespeichert sind.</p>
+        <p><strong>Verwendung:</strong> <code>/allusernamehistory</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/allusernamehistory</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>2. <code>/allnicknamehistory</code></h3>
+        <p><strong>Beschreibung:</strong> Zeigt alle Nickname-Änderungen an, die in der Datenbank gespeichert sind.</p>
+        <p><strong>Verwendung:</strong> <code>/allnicknamehistory</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/allnicknamehistory</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>3. <code>/topusers</code></h3>
+        <p><strong>Beschreibung:</strong> Zeigt die Top 5 Nutzer (nach Anzahl der Anfragen) und die letzten 5 Nutzer an.</p>
+        <p><strong>Verwendung:</strong> <code>/topusers</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/topusers</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>4. <code>/blockuser</code></h3>
+        <p><strong>Beschreibung:</strong> Blockiert einen Nutzer, sodass er den Bot nicht mehr verwenden kann.</p>
+        <p><strong>Verwendung:</strong> <code>/blockuser &lt;user_id&gt;</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/blockuser 123456789</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>5. <code>/unblockuser</code></h3>
+        <p><strong>Beschreibung:</strong> Entblockiert einen Nutzer, sodass er den Bot wieder verwenden kann.</p>
+        <p><strong>Verwendung:</strong> <code>/unblockuser &lt;user_id&gt;</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/unblockuser 123456789</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>6. <code>/broadcast</code></h3>
+        <p><strong>Beschreibung:</strong> Sendet eine Nachricht an alle Nutzer, die den Bot jemals verwendet haben.</p>
+        <p><strong>Verwendung:</strong> <code>/broadcast &lt;Nachricht&gt;</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/broadcast Hallo an alle! Dies ist eine Testnachricht.</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>7. <code>/setlimit</code></h3>
+        <p><strong>Beschreibung:</strong> Ändert das tägliche Anfragelimit für alle Nutzer.</p>
+        <p><strong>Verwendung:</strong> <code>/setlimit &lt;neues_limit&gt;</code></p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/setlimit 10</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>8. <code>/adminlist</code></h3>
+        <p><strong>Beschreibung:</strong> Zeigt eine Liste aller Admins mit ihren User IDs und Telegram-Nutzernamen an.</p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/adminlist</pre>
+        </div>
+    </div>
+
+    <div class="command">
+        <h3>9. <code>/setadvertising</code></h3>
+        <p><strong>Beschreibung:</strong> Aktiviert oder deaktiviert das Werbesystem für Gruppen.</p>
+        <div class="example">
+            <strong>Beispiel:</strong>
+            <pre>/setadvertising on</pre>
+        </div>
+    </div>
+
+    <h2>Wichtige Hinweise</h2>
+    <ul>
+        <li><strong>Admin-Rechte:</strong> Nur Nutzer, deren Telegram-ID in der <code>ADMIN_USER_IDS</code>-Liste enthalten ist, können diese Befehle verwenden.</li>
+        <li><strong>Logging:</strong> Alle Admin-Aktionen werden im Log festgehalten, falls <code>LOGGING_ENABLED</code> aktiviert ist.</li>
+        <li><strong>Fehlerbehandlung:</strong> Bei ungültigen Eingaben wird eine Fehlermeldung mit Anweisungen angezeigt.</li>
+    </ul>
+
+    <h2>Kontakt</h2>
+    <p>Bei Fragen oder Problemen wende dich bitte an den Bot-Entwickler:</p>
+    <
+</body>
+</html>
