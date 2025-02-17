@@ -162,6 +162,34 @@
                     <code>/exportdata</code>
                 </div>
             </div>
+
+            <!-- Neue Admin-Befehle in Version 1.4.4 -->
+            <div class="command">
+                <div class="command-title">/broadcast &lt;Nachricht&gt;</div>
+                <p>Sendet eine Nachricht an alle Benutzer oder an bestimmte Gruppen.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/broadcast Serverwartung beginnt in 10 Minuten.</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-title">/setlimit &lt;Anzahl&gt;</div>
+                <p>Legt das tägliche Anfrage-Limit für Benutzer fest.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/setlimit 10</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-title">/getlive</div>
+                <p>Ermöglicht den Abruf des Live-Status eines Profils. Ist ein Stream aktiv, wird die RTMP URL direkt zurückgegeben.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/getlive @beispieluser</code>
+                </div>
+            </div>
         </div>
 
         <div id="profilanalyse" class="section" data-aos="fade-up">
@@ -203,6 +231,7 @@
                 <li>Aktueller Live-Status</li>
                 <li>Room-ID des Livestreams</li>
                 <li>Region und Sprache des Streams</li>
+                <li>Direkter Abruf der RTMP URL (bei aktivem Stream)</li>
             </ul>
         </div>
 
@@ -229,7 +258,7 @@
             <h2>📚 Aktuelle Version</h2>
             <div class="stat-card">
                 <div class="stat-icon">📱</div>
-                <div class="stat-number">1.4.3</div>
+                <div class="stat-number">1.4.4</div>
                 <div class="stat-label">Aktuelle Version</div>
                 <a href="changelog_programmierenfuermobbing.html" class="credit-link">Changelog ansehen</a>
             </div>

@@ -47,7 +47,7 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">📱</div>
-                    <div class="stat-number">1.4.3</div>
+                    <div class="stat-number">1.4.4</div>
                     <div class="stat-label">Aktuelle Version</div>
                     <a href="changelog.html" class="credit-link">Changelog ansehen</a>
                 </div>
@@ -93,8 +93,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔄</div>
-                <h3>Live-Status</h3>
-                <p>Überprüfe in Echtzeit, ob ein Profil gerade live streamt</p>
+                <h3>Live-Status &amp; Live-URL Abruf</h3>
+                <p>Ermittle in Echtzeit, ob ein Profil live streamt und erhalte sofort die RTMP Live-URL</p>
             </div>
         </div>
 
@@ -103,14 +103,16 @@
             <div class="command">
                 <div class="command-name">
                     Beispiel einer Profilabfrage
-                    <button class="copy-button" onclick="copyToClipboard('/tiktok @username')">Befehl kopieren</button>
+                    <button class="copy-button" onclick="copyToClipboard('/tiktok @username')">📋</button>
                 </div>
                 <div class="telegram-message">
                     <div class="message-header">
                         <img src="icon.png" alt="Bot Avatar" class="bot-avatar">
                         <span class="bot-name">TikTokAbfrageBot</span>
                     </div>
-                    <pre class="message-content">🤖 TikTok Benutzerinfo
+                    <pre class="message-content">
+🤖 TikTok Benutzerinfo
+─────────────────────────────────────────────
 👤 Name: [Username]
 💎 Username: @username
 🆔 User ID: 123456789
@@ -118,21 +120,28 @@
 📍 RoomID: 7467190337325533974
 🌍 Region: DE
 🗣 Language: DE
-
+─────────────────────────────────────────────
 📊 Statistiken:
 ↳ Follower: 28200
 ↳ Folgt: 3568
 ↳ Likes: 2100000
 ↳ Videos: 545
 👥 Freunde: 3026
-
+─────────────────────────────────────────────
 📅 Account erstellt: 30.10.2019, 09:07:38
 ✏️ Letzte Namensänderung: 10.01.2025, 22:07:03
 🔒 Privater Account: Nein ❌
 🔴 Live: Ja ✅
-
+─────────────────────────────────────────────   
 🖼️ Profilbild: https://...
-🔗 Permalink: https://www.tiktok.com/@...</pre>
+🔗 Permalink: https://www.tiktok.com/@...
+─────────────────────────────────────────────   
+🔴 Zuschauerzahl: 123456789
+🕒 Stream-Dauer: 12:34:56
+─────────────────────────────────────────────   
+🔴 RTMP URL: rtmp://live.tiktok.com/stream/...
+─────────────────────────────────────────────   
+</pre>
                 </div>
             </div>
         </div>
@@ -146,7 +155,7 @@
                 <div class="command" onclick="toggleCommand('start')">
                     <div class="command-name">
                         /start
-                        <button class="copy-button" onclick="copyToClipboard('/start'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/start'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="start-details">
                         <p>Startet den Bot und zeigt die Willkommensnachricht.</p>
@@ -158,7 +167,7 @@
                 <div class="command" onclick="toggleCommand('help')">
                     <div class="command-name">
                         /help
-                        <button class="copy-button" onclick="copyToClipboard('/help'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/help'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="help-details">
                         <p>Zeigt die Hilfe und alle verfügbaren Befehle an.</p>
@@ -170,7 +179,7 @@
                 <div class="command" onclick="toggleCommand('lasttiktokers')">
                     <div class="command-name">
                         /lasttiktokers
-                        <button class="copy-button" onclick="copyToClipboard('/lasttiktokers'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/lasttiktokers'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="lasttiktokers-details">
                         <p>Zeigt die letzten TikTok-Nutzer an, die abgefragt wurden.</p>
@@ -187,7 +196,7 @@
                 <div class="command" onclick="toggleCommand('tiktok-username')">
                     <div class="command-name">
                         /tiktok @username
-                        <button class="copy-button" onclick="copyToClipboard('/tiktok @username'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/tiktok @username'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="tiktok-username-details">
                         <p>Ruft Informationen über ein TikTok-Profil via Username ab.</p>
@@ -203,7 +212,7 @@
                 <div class="command" onclick="toggleCommand('tiktok-userid')">
                     <div class="command-name">
                         /tiktok ID --by_id
-                        <button class="copy-button" onclick="copyToClipboard('/tiktok ID --by_id'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/tiktok ID --by_id'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="tiktok-id-details">
                         <p>Ruft Informationen über ein TikTok-Profil via User-ID ab.</p>
@@ -223,7 +232,7 @@
                 <div class="command" onclick="toggleCommand('history')">
                     <div class="command-name">
                         /history ID
-                        <button class="copy-button" onclick="copyToClipboard('/history ID'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/history ID'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="history-details">
                         <p>Zeigt die Verlaufshistorie eines Profils anhand der User-ID an.</p>
@@ -239,7 +248,7 @@
                 <div class="command" onclick="toggleCommand('nickhistory')">
                     <div class="command-name">
                         /nickhistory userid
-                        <button class="copy-button" onclick="copyToClipboard('/nickhistory userid'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/nickhistory userid'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="nickhistory-details">
                         <p>Zeigt die Historie der Nickname Änderungen eines Profils anhand der User-ID an.</p>
@@ -255,7 +264,7 @@
                 <div class="command" onclick="toggleCommand('stats')">
                     <div class="command-name">
                         /stats
-                        <button class="copy-button" onclick="copyToClipboard('/stats'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/stats'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="stats-details">
                         <p>Zeigt Statistiken über den Bot an, wie zum Beispiel:</p>
@@ -277,7 +286,7 @@
                 <div class="command" onclick="toggleCommand('topusers')">
                     <div class="command-name">
                         /topusers
-                        <button class="copy-button" onclick="copyToClipboard('/topusers'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/topusers'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="topusers-details">
                         <p>Zeigt die Top 5 Nutzer und die letzten 5 Nutzer an (nur für Admins).</p>
@@ -289,7 +298,7 @@
                 <div class="command" onclick="toggleCommand('adminlist')">
                     <div class="command-name">
                         /adminlist
-                        <button class="copy-button" onclick="copyToClipboard('/adminlist'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/adminlist'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="adminlist-details">
                         <p>Zeigt die Liste der Admins an.</p>
@@ -301,7 +310,7 @@
                 <div class="command" onclick="toggleCommand('userinfo')">
                     <div class="command-name">
                         /userinfo
-                        <button class="copy-button" onclick="copyToClipboard('/userinfo'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/userinfo'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="userinfo-details">
                         <p>Zeigt Informationen über einen bestimmten Benutzer an.</p>
@@ -313,7 +322,7 @@
                 <div class="command" onclick="toggleCommand('blocklist')">
                     <div class="command-name">
                         /blocklist
-                        <button class="copy-button" onclick="copyToClipboard('/blocklist'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/blocklist'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="blocklist-details">
                         <p>Zeigt die Liste der blockierten Benutzer an.</p>
@@ -325,7 +334,7 @@
                 <div class="command" onclick="toggleCommand('setlimit')">
                     <div class="command-name">
                         /setlimit
-                        <button class="copy-button" onclick="copyToClipboard('/setlimit'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/setlimit'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="setlimit-details">
                         <p>Setzt das Anfragelimit für die Benutzer.</p>
@@ -337,7 +346,7 @@
                 <div class="command" onclick="toggleCommand('broadcast')">
                     <div class="command-name">
                         /broadcast
-                        <button class="copy-button" onclick="copyToClipboard('/broadcast'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/broadcast'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="broadcast-details">
                         <p>Sendet eine Nachricht an alle Benutzer. (In der "query_log" gespeicherte Nutzer)</p>
@@ -349,7 +358,7 @@
                 <div class="command" onclick="toggleCommand('blockuser')">
                     <div class="command-name">
                         /blockuser
-                        <button class="copy-button" onclick="copyToClipboard('/blockuser'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/blockuser'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="blockuser-details">
                         <p>Blockiert einen Benutzer.</p>
@@ -361,7 +370,7 @@
                 <div class="command" onclick="toggleCommand('unblockuser')">
                     <div class="command-name">
                         /unblockuser
-                        <button class="copy-button" onclick="copyToClipboard('/unblockuser'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/unblockuser'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="unblockuser-details">
                         <p>Entblockt einen Benutzer.</p>
@@ -373,7 +382,7 @@
                 <div class="command" onclick="toggleCommand('exportdata')">
                     <div class="command-name">
                         /exportdata
-                        <button class="copy-button" onclick="copyToClipboard('/exportdata'); event.stopPropagation();">Kopieren</button>
+                        <button class="copy-button" onclick="copyToClipboard('/exportdata'); event.stopPropagation();">📋</button>
                     </div>
                     <div class="command-details" id="exportdata-details">
                         <p>Exportiert die Datenbank als CSV Dateien.</p>
@@ -398,9 +407,8 @@
                             <li>Account-Erstellungsdatum</li>
                             <li>Letzte Namensänderung Datum</li>
                             <li>Privater Account</li>
-                            <li>Live-Status-Überprüfung</li>
+                            <li><strong><italic>Live-Status-Überprüfung &amp; Live-URL Abruf</italic></strong></li>
                             <li>Letzte erfasste TikTok-Nutzer anzeigen</li>
-
                             <li>Alle Namensänderungen eines Nutzers anzeigen</li>
                             <li>Alle Nickname-Änderungen eines Nutzers anzeigen</li>
                             <li>Top 5 Nutzer und die letzten 5 Nutzer anzeigen</li>

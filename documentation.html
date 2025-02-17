@@ -161,6 +161,34 @@
                     <code>/exportdata</code>
                 </div>
             </div>
+
+            <!-- Neue Admin-Befehle in Version 1.4.4 -->
+            <div class="command">
+                <div class="command-title">/broadcast &lt;Nachricht&gt;</div>
+                <p>Sendet eine Nachricht an alle Benutzer oder an bestimmte Gruppen.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/broadcast Serverwartung beginnt in 10 Minuten.</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-title">/setlimit &lt;Anzahl&gt;</div>
+                <p>Legt das tägliche Anfrage-Limit für Benutzer fest.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/setlimit 10</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-title">/getlive</div>
+                <p>Ermöglicht den Abruf des Live-Status eines Profils. Ist ein Stream aktiv, wird die RTMP URL direkt zurückgegeben.</p>
+                <div class="example">
+                    <div class="example-title">Beispiel:</div>
+                    <code>/getlive @beispieluser</code>
+                </div>
+            </div>
         </div>
 
         <div id="profilanalyse" class="section" data-aos="fade-up">
@@ -201,6 +229,7 @@
                 <li>Aktueller Live-Status</li>
                 <li>Room-ID des Livestreams</li>
                 <li>Region und Sprache des Streams</li>
+                <li>Direkter Abruf der RTMP URL (bei aktivem Stream)</li>
             </ul>
         </div>
 
@@ -225,46 +254,11 @@
 
         <div class="section" data-aos="fade-up">
             <h2>📚 Aktuelle Version</h2>
-            <div class="command">
-                <div class="command-title">Version 1.4.3 (10.02.2024)</div>
-                <p>Neuste Verbesserungen:</p>
-                <ul>
-                    <li>Verbesserte SQLite-Datenbankintegration</li>
-                    <li>Optimierte Datenbankabfragen</li>
-                    <li>Erweiterte Fehlerbehandlung für Datenbankoperationen</li>
-                    <li>Überarbeitete Datenbankstruktur für bessere Performance</li>
-                </ul>
-                <p><a href="changelog.html" class="credit-link">Vollständigen Changelog ansehen</a></p>
-            </div>
-
-            <div class="command">
-                <div class="command-title">Version 1.4.2 (08.02.2024)</div>
-                <ul>
-                    <li>Sicheres Beenden des Bots mit CTRL+C</li>
-                    <li>Konsolenicon-Unterstützung für kompilierte .exe</li>
-                    <li>Verbesserte Konsolenausgaben für Bot-Status</li>
-                    <li>Detailliertere Logging-Informationen</li>
-                </ul>
-            </div>
-
-            <div class="command">
-                <div class="command-title">Version 1.4.1 (07.02.2024)</div>
-                <ul>
-                    <li>Optimierte Signal-Handler für sauberes Beenden</li>
-                    <li>Verbesserte Thread-Verwaltung</li>
-                    <li>Aktualisierte Dokumentation</li>
-                    <li>Erweiterte Kompilierungsoptionen</li>
-                </ul>
-            </div>
-            <!-- Neuer Abschnitt: Aktuelle Version -->
-            <div class="section" data-aos="fade-up">
-                <h2>📚 Aktuelle Version</h2>
-                <div class="stat-card">
-                    <div class="stat-icon">📱</div>
-                    <div class="stat-number">1.4.3</div>
-                    <div class="stat-label">Aktuelle Version</div>
-                    <a href="changelog.html" class="credit-link">Changelog ansehen</a>
-                </div>
+            <div class="stat-card">
+                <div class="stat-icon">📱</div>
+                <div class="stat-number">1.4.4</div>
+                <div class="stat-label">Aktuelle Version</div>
+                <a href="changelog.html" class="credit-link">Changelog ansehen</a>
             </div>
         </div>
     </div>
