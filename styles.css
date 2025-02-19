@@ -1,10 +1,18 @@
+:root {
+    --primary-color: #fe2c55;
+    --secondary-color: #ff4d79;
+    --background-color: #f0f2f5;
+    --text-color: #1c1e21;
+    --transition-duration: 0.3s;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #1c1e21;
+    background-color: var(--background-color);
+    color: var(--text-color);
     background: linear-gradient(-45deg, #fe2c55, #ff4d79, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -29,7 +37,7 @@ body {
 }
 
 header {
-    background-color: #fe2c55;
+    background-color: var(--primary-color);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -169,13 +177,13 @@ h1 {
 
 .bot-link {
     display: inline-block;
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     margin: 10px 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
     box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
     animation: pulse 2s infinite;
 }
@@ -199,12 +207,12 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
-    transition: all 0.3s ease;
-    color: #fe2c55;
+    transition: all var(--transition-duration) ease;
+    color: var(--primary-color);
 }
 
 .copy-button:hover {
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
 }
 
@@ -221,12 +229,12 @@ footer {
 
 footer p {
     margin: 5px 0;
-    color: #1c1e21;
+    color: var(--text-color);
     font-size: 0.9em;
 }
 
 footer .disclaimer {
-    color: #666;
+    color: #000000;
     font-size: 0.8em;
     max-width: 600px;
     margin: 10px auto;
@@ -234,29 +242,29 @@ footer .disclaimer {
 }
 
 footer .credits {
-    color: #fe2c55;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 footer .separator {
     display: inline-block;
     margin: 0 10px;
-    color: #fe2c55;
+    color: var(--primary-color);
 }
 
 .contact-button {
     display: inline-block;
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
 }
 
 .contact-button:hover {
-    background: #e62548;
+    background: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -290,9 +298,9 @@ footer .separator {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
     text-decoration: none;
-    color: #1c1e21;
-    transition: all 0.3s ease;
-    border: 2px solid #fe2c55;
+    color: var(--text-color);
+    transition: all var(--transition-duration) ease;
+    border: 2px solid var(--primary-color);
     position: relative;
     overflow: hidden;
     -webkit-backdrop-filter: blur(10px);
@@ -302,14 +310,14 @@ footer .separator {
 .action-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(254, 44, 85, 0.2);
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
 }
 
 .action-button .icon {
     font-size: 28px;
     margin-bottom: 12px;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-duration) ease;
 }
 
 .action-button:hover .icon {
@@ -320,7 +328,7 @@ footer .separator {
     font-size: 14px;
     font-weight: 500;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
 }
 
 .action-button .tooltip-text {
@@ -328,17 +336,15 @@ footer .separator {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
-    padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 5px;
+    padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: -45px;
+    bottom: 125%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    font-size: 12px;
+    margin-left: -60px;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-duration) ease;
 }
 
 .action-button:hover .tooltip-text {
@@ -416,10 +422,11 @@ html {
 
 .stat-card {
     background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
     border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -430,11 +437,22 @@ html {
     box-shadow: 0 5px 15px rgba(254, 44, 85, 0.2);
 }
 
-.stat-number {
+.stat-icon {
     font-size: 2em;
-    color: #fe2c55;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.stat-number {
+    font-size: 1.5em;
+    color: var(--primary-color);
     font-weight: bold;
     margin: 10px 0;
+}
+.stat-label {
+    font-size: 0.8em;
+    color: #666;
+    font-weight: bold;
 }
 
 /* Interaktive Feature-Karten */
@@ -458,12 +476,12 @@ html {
 .feature-icon {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #fe2c55;
+    color: var(--primary-color);
 }
 
 .feature-card h3 {
     margin: 10px 0;
-    color: #1c1e21;
+    color: var(--text-color);
 }
 
 .feature-card p {
@@ -472,16 +490,16 @@ html {
 }
 
 .feature-action {
-    color: #fe2c55;
+    color: var(--primary-color);
     font-weight: bold;
     margin-top: auto;
     padding-top: 10px;
     border-top: 1px solid #eee;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
 }
 
 .feature-card:hover .feature-action {
-    color: #d4204a;
+    color: var(--secondary-color);
     transform: translateX(5px);
 }
 
@@ -505,7 +523,7 @@ html {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-duration) ease;
 }
 
 .tooltip:hover .tooltiptext {
@@ -522,8 +540,8 @@ html {
     stroke-width: 2;
     stroke: #fff;
     stroke-miterlimit: 10;
-    box-shadow: inset 0 0 0 #fe2c55;
-    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    box-shadow: inset 0 0 0 var(--primary-color);
+    animation: fill var(--transition-duration) ease-in-out var(--transition-duration) forwards, scale .3s ease-in-out .9s both;
 }
 
 /* Scroll Progress Bar */
@@ -533,7 +551,7 @@ html {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, #fe2c55, #ff4d79);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     transform-origin: 0;
     transform: scaleX(0);
     z-index: 1000;
@@ -560,7 +578,7 @@ html {
 
 /* Animierte Hintergründe für Hover */
 .action-button:hover {
-    background: linear-gradient(45deg, #fe2c55, #ff4d79);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     background-size: 200% 200%;
     animation: gradientMove 2s ease infinite;
 }
@@ -595,25 +613,25 @@ html {
     backdrop-filter: blur(10px);
     padding: 20px;
     text-align: center;
-    color: #fe2c55;
+    color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .btn-primary {
-    background: #fe2c55;
+    background: var(--primary-color);
     border: none;
     padding: 12px 25px;
     border-radius: 5px;
     color: white;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
     box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
 }
 
 .btn-primary:hover {
-    background: #e62548;
+    background: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
 }
@@ -689,15 +707,15 @@ html {
 }
 
 .bot-avatar {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .bot-name {
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--text-color);
 }
 
 .message-content {
@@ -723,7 +741,7 @@ html {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
     width: 45px;
     height: 45px;
@@ -741,7 +759,7 @@ html {
 .back-to-top:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(254, 44, 85, 0.4);
-    background: #e62548;
+    background: var(--secondary-color);
 }
 
 .command-category {
@@ -756,18 +774,18 @@ html {
     position: absolute;
     left: 20px;
     top: 20px;
-    background: #fe2c55;
+    background: var(--primary-color);
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 0.9em;
-    transition: all 0.3s ease;
+    transition: all var(--transition-duration) ease;
     box-shadow: 0 2px 5px rgba(254, 44, 85, 0.3);
 }
 
 .back-button:hover {
-    background: #e62548;
+    background: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
 }
@@ -800,4 +818,18 @@ html {
     max-width: 90%;
     max-height: 90%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.indented-text {
+    margin-left: 40%; /* Beispielwert für Einzug */
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.centered-offset-text {
+    text-align: center;
+    margin-left: 15%; /* Beispielwert für den leichten Versatz nach links */
+    transform: translateX(-17.5%); /* Korrigiert die Zentrierung leicht nach links */
 }

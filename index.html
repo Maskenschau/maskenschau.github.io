@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Info Bot - Dokumentation</title>
+    <meta name="description" content="Der leistungsstarke Telegram-Bot für TikTok-Profilanalysen.">
+    <meta name="keywords" content="TikTok, Telegram Bot, Profilanalyse, RTMP, Livestream">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -12,34 +14,34 @@
     <header>
         <h1>TikTok User Info Bot</h1>
         <div class="subtitle">Der leistungsstarke Telegram-Bot für TikTok-Profilanalysen</div>
-        <a href="https://t.me/TikTokAbfrageBot" class="bot-link">🤖 Bot auf Telegram öffnen</a>
+        <a href="https://t.me/TikTokAbfrageBot" class="bot-link" aria-label="Bot auf Telegram öffnen">🤖 Bot auf Telegram öffnen</a>
     </header>
 
     <div class="container">
         <div class="section" data-aos="fade-up">
             <h2>🚀 Schnellstart</h2>
             <div class="button-grid">
-                <a href="https://t.me/TikTokAbfrageBot" class="action-button">
+                <a href="https://t.me/TikTokAbfrageBot" class="action-button" aria-label="Bot starten">
                     <span class="icon">🤖</span>
                     <span class="text">Bot starten</span>
                     <span class="tooltip-text">Starte jetzt mit dem Bot auf Telegram</span>
                 </a>
-                <a href="documentation.html" class="action-button">
+                <a href="documentation.html" class="action-button" aria-label="Dokumentation">
                     <span class="icon">📚</span>
                     <span class="text">Dokumentation</span>
                     <span class="tooltip-text">Lerne alle Funktionen kennen</span>
                 </a>
-                <a href="https://github.com/Furby87" class="action-button">
+                <a href="https://github.com/Furby87" class="action-button" aria-label="GitHub">
                     <span class="icon">💻</span>
                     <span class="text">GitHub</span>
                     <span class="tooltip-text">Weiter Projekte von @Furby87</span>
                 </a>
-                <a href="https://t.me/furby87" class="action-button">
+                <a href="https://t.me/furby87" class="action-button" aria-label="Support">
                     <span class="icon">💬</span>
                     <span class="text">Support</span>
                     <span class="tooltip-text">Kontaktiere unseren Support auf Telegram</span>
                 </a>
-                <a href="#rtmp" class="action-button">
+                <a href="#rtmp" class="action-button" aria-label="RTMP Anleitung">
                     <span class="icon">📺</span>
                     <span class="text">RTMP Anleitung</span>
                     <span class="tooltip-text">So spielst du RTMP-Stream mit VLC ab</span>
@@ -54,7 +56,7 @@
                     <div class="stat-icon">📱</div>
                     <div class="stat-number">1.4.4</div>
                     <div class="stat-label">Aktuelle Version</div>
-                    <a href="changelog.html" class="credit-link">Changelog ansehen</a>
+                    <a href="changelog.html" class="credit-link" aria-label="Changelog ansehen">Changelog ansehen</a>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">⚡</div>
@@ -449,8 +451,15 @@
         </div>
 
         <div class="section" data-aos="fade-up" id="live">
-            <h2>🔴 Live-Status</h2>
+            <h2>🔴 Live-Status:</h2>
             <!-- Inhalt der Live-Status Sektion -->
+             <div class="live-status-content">
+             <ul>
+                <li>Der Live-Status wird automatisch aktualisiert und zeigt an, ob der Stream gerade aktiv ist oder nicht.</li>
+                <li>Sofern der Stream des abgefragten Accounts aktiv ist, wird eine RTMP-URL ausgegeben.</li>
+            </ul>
+            <h5 class="centered-offset-text">- Wie diese URL genutzt wird, ist in der nächsten Sektion beschrieben.</h5>
+            </div>
         </div>
         
         <!-- Neue RTMP-Stream Anleitung Sektion -->
