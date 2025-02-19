@@ -776,3 +776,9 @@ html {
     max-width: 50%;
     height: auto;
 }
+
+.image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
