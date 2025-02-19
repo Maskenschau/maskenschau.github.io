@@ -771,3 +771,8 @@ html {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(254, 44, 85, 0.4);
 }
+
+.responsive-img {
+    max-width: 50%;
+    height: auto;
+}
